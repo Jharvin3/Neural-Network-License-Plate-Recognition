@@ -1,8 +1,10 @@
 # Neural-Network-License-Plate-Recognition
 Introduction
+
 For this project we will be working in a group of three people: Michelle Gore, Jamaine Harvin, and Alsion Tafa. We plan to use Tensorflow to create a neural network that reads out the numbers and letters from an image of a license plate. We will use a dataset of license plate images with labels from Kaggle to train and test our network.
 
 Discussion
+
 To start creating our network we needed to load and preprocess the data. Kaggle has a library that allows us to import our data into the code. Once we had the images we resized each image and converted each image to grayscale so the network does not have to deal with input of different sizes or read a color variable. We used the cv2 image library to do this.
 We built our model with twenty layers. First, we use convolution layers, which extract the features of the image using a kernel function. It takes a tensor representation of the image, I=(height, width, channel) and gives us a feature map, denoted by F[i,j]=(I*K)[i,j], where K is the learned kernel that gets passed over the image tensor. In our case we converted our image to grayscale, so channel = 1. The ij-th entry of our resultant feature map is given by:
 
@@ -71,6 +73,7 @@ We have learned about the complexities of a neural network. The tensorflow libra
 
 
 References
+
 baeldung. (2023, April 23). What is the purpose of a feature map in a convolutional neural network. Baeldung on Computer Science. https://www.baeldung.com/cs/cnn-feature-map 
 Tariq, Farina. “Breaking Down the Mathematics Behind CNN Models: A Comprehensive Guide” Medium, 2 May 2023, medium.com/@beingfarina/breaking-down-the-mathematics-behind-cnn-models-a-comprehensive-guide-1853aa6b011e. Accessed 1 Dec. 2024.
 “Basic classification: Classify images of clothing  |  TensorFlow Core” www.tensorflow.org/tutorials/keras/classification. Accessed 1 Dec. 2024.
