@@ -3,6 +3,9 @@ Introduction
 
 For this project we will be working in a group of three people: Michelle Gore, Jamaine Harvin, and Alsion Tafa. We plan to use Tensorflow to create a neural network that reads out the numbers and letters from an image of a license plate. We will use a dataset of license plate images with labels from Kaggle to train and test our network.
 
+
+
+
 Discussion
 
 To start creating our network we needed to load and preprocess the data. Kaggle has a library that allows us to import our data into the code. Once we had the images we resized each image and converted each image to grayscale so the network does not have to deal with input of different sizes or read a color variable. We used the cv2 image library to do this.
@@ -56,9 +59,15 @@ The Loss Function measures how accurate the model is during the training. Our Mu
 where yi are the labels and,
  pi is the predicted probability of each label
 
+
+
+
 Implementation
 
 The code itself has comments on it explaining what we did. In addition, we wanted a brief text description of what was done. The first step was simply import our packages and get a path to the dataset we use from Kagglehub. After that we proceeded to take our images from the dataset, convert them to grayscale and resize them and split our images into a training array and a testing array as well as formatting our labels for our images into a training and testing array. We then created batches of our images to train. Finally, we make our model which is described in more detail in the discussion, and the code itself. And the training by using tensorflow GradientTape, Predictions which feeds the images to our model, and Loss which is in the discussion. The testing step is similar using predictions and loss but no GradientTape and setting training=Flase for predictions so our model is not in the training mode but just inference mode during the test step. Both the test and train functions are described in the code with comments.
+
+
+
 
 
 
@@ -66,9 +75,15 @@ Results
 
 Our code ended up resulting in about a 7% accuracy for character which is better than the 2.8% accuracy of just randomly guessing. This means for every set of characters in a license plate it gets about 7% of the characters correct. However, this does not mean it gets 7% of the licenses correct since each license was 6 characters and furthermore needed to be in order. The code while working has some major issues. First was after numerous experimentation we we’re unable to get the accuracy per character we wanted and as a result we could not get an above .01% accuracy for the whole license plate. Due to this we get a model that has around a 7% accuracy of guessing a character out of A-Z 0-9 above the 2.8% of randomly guessing but not enough accuracy to get the character and place them in order for the license plate. Furthermore, as a result of low accuracy this we decided against attempting license plates with a state and trying to find the state the license is from.
 
+
+
+
 Conclusion 
 
 We have learned about the complexities of a neural network. The tensorflow library helped out a lot with the programming portion of the project, providing tools that helped us build and train the model.. The real challenge was figuring out how all the pieces fit together. Between the layers in the model build, the compiling of the model, and the training and testing, the data gets manipulated and rearranged in very complex ways. The data updates at every step so that it is in the optimal state to train the network to get the most desired results. 
+
+
+
 
 
 
